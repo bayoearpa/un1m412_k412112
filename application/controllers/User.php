@@ -46,7 +46,7 @@ class User extends CI_Controller {
 		$d = $this->m_tracer->get_data($where2,'tbl_f4')->num_rows();
 		//select
 		$where = array(
-            'tbl_datadiri.Nim' => $nim       
+            'tbl_datadiri2021.Nim' => $nim       
         );
         $data['d'] = $d;
         $data['catar'] = $this->m_tracer->get_data_join_where($where)->result();
