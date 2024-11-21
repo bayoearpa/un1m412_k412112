@@ -49,7 +49,7 @@ class User extends CI_Controller {
             'tbl_datadiri2021.Nim' => $nim       
         );
         $data['d'] = $d;
-        $data['catar'] = $this->m_tracer->get_data_join_where($where)->result();
+        $data['catar'] = $this->m_tracer->get_data_join_where2021($where)->result();
 		$this->load->view('user/header',$data);
 		$this->load->view('user/home',$data);
 		$this->load->view('user/footer');
