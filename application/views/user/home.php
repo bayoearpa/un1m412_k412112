@@ -107,7 +107,7 @@
               <strong><i class="fa fa-book margin-r-5"></i> No. Handphone</strong>
 
               <p class="text-muted">
-                <?php echo $c->hp_mahasiswa; ?>
+                <?php echo $c->telpomsmh; ?>
               </p>
 
              
