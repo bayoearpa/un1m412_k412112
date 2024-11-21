@@ -33,7 +33,7 @@ class M_tracer extends CI_Model {
         return $hasil->result();
     }
 	function get_data_join_where($where){
-		$this->db->select('tbl_datadiri.Nim,
+		$this->db->select('tbl_datadiri2021.Nim,
 tbl_datadiri2021.bekerja,
 tbl_datadiri2021.perusahaan,
 tbl_datadiri2021.jabatan,
