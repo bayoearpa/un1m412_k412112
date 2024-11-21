@@ -120,7 +120,7 @@ tmst_mahasiswa.rw,
 tmst_mahasiswa.pindahan
 		');
 		$this->db->from('tbl_datadiri');
-		$this->db->join('tmst_mahasiswa','tbl_datadiri.Nim = tmst_mahasiswa.NIM','inner');
+		$this->db->join('tmst_mahasiswa','tbl_datadiri2021.Nim = tmst_mahasiswa.NIM','inner');
 		$this->db->where($where);
 		// $this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
