@@ -56,6 +56,17 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/home');
 		$this->load->view('admin/footer');
 	}
+  ///////////////////////////////////////////////////// Akun //////////////////////////////////////////////////////
+    public function akun()
+    {
+      # code...
+    $data['lulusan'] = $this->m_tracer->get_data_join_all()->result();  
+    $this->load->view('admin/header');
+    $this->load->view('admin/akun',$data);
+    $this->load->view('admin/footer');
+    }
+
+   ///////////////////////////////////////////////////// .Akun //////////////////////////////////////////////////////
 	public function export()
 	{
 		# code...
