@@ -428,7 +428,7 @@ tmst_program_studi.Nama_program_studi as nm_prodi,
 tbl_datadiri2021.bekerja');
 		$this->db->from('tbl_datadiri2021');
 		$this->db->join('tmst_mahasiswa','tbl_datadiri2021.nimhsmsmh = tmst_mahasiswa.NIM','inner');
-		$this->db->join('tmst_mahasiswa','tmst_program_studi.Kode_program_studi = tmst_mahasiswa.Kode_program_studi','inner');
+		$this->db->join('tmst_program_studi','tmst_program_studi.Kode_program_studi = tmst_mahasiswa.Kode_program_studi','inner');
 		// $this->db->where($where);
 		// $this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 		$query=$this->db->get();
