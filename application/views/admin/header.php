@@ -125,6 +125,7 @@
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MENU UTAMA</li>
+        <li class="active"><a href="<?php echo base_url() ?>admin/akun"><i class="fa fa-search"></i>Akun</a></li>
         <li class="active"><a href="<?php echo base_url() ?>admin/export"><i class="fa fa-search"></i>Cek Tracer</a></li>
         <li class="treeview">
           <a href="#">
@@ -186,8 +187,8 @@
             <!-- <li><a href="index2.html"><i class="fa fa-paperclip"></i>Rekap</a></li> -->
           </ul>
         </li>
-         <li class="active"><a href="<?php echo base_url() ?>admin/export"><i class="fa fa-file-excel"></i>Export Excel</a></li>
-          <li class="active"><a href="<?php echo base_url() ?>admin/export2021"><i class="fa fa-file-excel"></i>Export Excel 2021</a></li>
+         <!-- <li class="active"><a href="<?php //echo base_url() ?>admin/export"><i class="fa fa-file-excel"></i>Export Excel</a></li> -->
+          <li class="active"><a href="<?php echo base_url() ?>admin/export2021"><i class="fa fa-file-excel"></i>Export Excel</a></li>
       </ul>
 
     </section>
