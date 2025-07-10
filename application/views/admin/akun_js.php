@@ -127,22 +127,28 @@ function connectEditButtonListeners() {
         });
     });
 
-     // Menyimpan perubahan dengan AJAX
+     // Saat tombol Simpan diklik
     $('#saveEdit').click(function() {
         $.ajax({
-            url: '<?php echo base_url('ppk/mon_editp'); ?>', // Sesuaikan dengan URL yang sesuai
+            url: '<?php echo base_url('admin/akun_edit'); ?>',
             type: 'POST',
             data: $('#editForm').serialize(),
             success: function(response) {
-                if (response == 'sukses') {
-                    // Tutup modal setelah data berhasil ditambahkan
+                if (response.trim() === 'sukses') {
+                    alert('Password berhasil diubah.');
                     $('#editModal').modal('hide');
-                    // Muat ulang tabel untuk menampilkan data terbaru
-                    reloadTable();
+
+                    // Jika pakai DataTables AJAX:
+                    // $('#example31082023').DataTable().ajax.reload(null, false);
+
+                    // Atau reload seluruh halaman:
+                    location.reload();
                 } else {
-                    // Tampilkan pesan kesalahan jika perlu
-                    alert('Gagal melakukan edit data baru.');
+                    alert('Gagal mengubah password.');
                 }
+            },
+            error: function(xhr, status, error) {
+                alert('Terjadi kesalahan saat menyimpan: ' + error);
             }
         });
     });

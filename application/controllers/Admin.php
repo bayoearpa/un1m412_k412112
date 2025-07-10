@@ -131,6 +131,26 @@ class Admin extends CI_Controller {
 
       echo json_encode($data ? $data : null);
     }
+    public function akun_edit()
+    {
+      // Tangani data yang dikirimkan dari formulir
+      $where = array(
+          'nim' => $this->input->post('nim'),
+      ); 
+      $data = array(
+          'password' => $this->input->post('password')
+      );
+
+      // Simpan data ke database
+      $res = $this->m_tracer->update_data($where, $data,'tbl_datadiri2021');
+      // Sesuaikan dengan model dan metode penyimpanan data Anda
+
+      if ($res) {
+          echo 'sukses';
+      } else {
+          echo 'gagal';
+      }
+    }
 
    ///////////////////////////////////////////////////// .Akun //////////////////////////////////////////////////////
 	public function export()
