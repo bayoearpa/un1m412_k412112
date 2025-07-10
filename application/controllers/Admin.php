@@ -124,6 +124,15 @@ class Admin extends CI_Controller {
             $this->load->view('admin/akun_js');
          } 
     }
+    public function akun_get_data($id)
+    {
+      # code...
+      // Ambil data berdasarkan ID dari model Anda
+          $data = $this->m_tracer->get_data_join_where20212($id); // Gantilah 'get_data_by_id' dengan metode yang sesuai dalam model Anda
+
+          // Konversi data ke format JSON dan kirimkan ke view
+          echo json_encode($data);
+    }
 
    ///////////////////////////////////////////////////// .Akun //////////////////////////////////////////////////////
 	public function export()

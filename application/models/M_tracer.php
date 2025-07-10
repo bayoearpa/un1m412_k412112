@@ -465,6 +465,42 @@ tbl_datadiri2021.bekerja');
 		$query=$this->db->get();
 		return $query;	
 	}
+	function get_data_join_where20212($where){
+		$this->db->select('tbl_datadiri2021.kdptimsmh,
+		tbl_datadiri2021.kdpstmsmh,
+		tbl_datadiri2021.nimhsmsmh as nim,
+		tbl_datadiri2021.nmmhsmsmh as nama,
+		tbl_datadiri2021.telpomsmh as telp,
+		tbl_datadiri2021.emailmsmh as email,
+		tbl_datadiri2021.tahun_lulus as thn_lulus,
+		tbl_datadiri2021.nik,
+		tbl_datadiri2021.npwp,
+		tbl_datadiri2021.nama_perusahaan,
+		tbl_datadiri2021.jabatan,
+		tbl_datadiri2021.jeda,
+		tbl_datadiri2021.domisili,
+		tbl_datadiri2021.`password`,
+		tmst_mahasiswa.Nama_mahasiswa,
+		tmst_mahasiswa.Kode_program_studi,
+		tmst_mahasiswa.Kode_perguruan_tinggi,
+		tmst_mahasiswa.Jenis_kelamin,
+		tmst_mahasiswa.Tanggal_lulus,
+		tmst_mahasiswa.hp_mahasiswa,
+		tmst_program_studi.Nama_program_studi as nm_prodi,
+		tbl_datadiri2021.bekerja');
+				$this->db->from('tbl_datadiri2021');
+				$this->db->join('tmst_mahasiswa','tbl_datadiri2021.nimhsmsmh = tmst_mahasiswa.NIM','inner');
+				$this->db->join('tmst_program_studi','tmst_program_studi.Kode_program_studi = tmst_mahasiswa.Kode_program_studi','inner');
+				$this->db->where($where);
+				// $this->db->order_by('tbl_catar_validasi.no_reg', "asc");
+				$query=$this->db->get();
+				
+				 if ($query->num_rows() > 0) {
+		            return $query->row();
+		        } else {
+		            return null;
+		        }	
+	}
 	function get_join_where_prodi_2021($where)
 	{
 		# code...

@@ -53,7 +53,7 @@
                   <button class="btn btn-primary edit-button" data-id="<?php echo $i->nim; ?>">Ganti Password</button>
                 </td>
                 <td>
-                  <button class="btn btn-danger add-button" data-id="<?php echo $i->nim; ?>">Hapus</button>
+                  <button class="btn btn-danger del-button" data-id="<?php echo $i->nim; ?>">Hapus</button>
                 </td>
                   </tr>
                   <?php } ?>
@@ -81,65 +81,12 @@
     </section>
     <!-- /.content -->
    
-   <!-- Modal Add -->
-<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="addModalLabel">Form Lulus D3</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Form Edit Data -->
-                <form id="addForm">
-                    <input type="hidden" id="addNim" name="nim">
-                    <div class="form-group">
-                        <label for="addNama">Nama:</label>
-                        <input type="text" class="form-control" id="addNama" name="nama" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="addTmptLahir">Tempat Lahir:</label>
-                        <input type="text" class="form-control" id="addTmptLahir" name="tl" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="addTglLahir">Tanggal Lahir:</label>
-                        <input type="text" class="form-control" id="addTglLahir" name="tgll" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="addAlamat">Alamat:</label>
-                        <textarea class="form-control" rows="3" id="addAlamat" name="alamat" readonly=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="addjnsklmn">Jenis Kelamin:</label>
-                        <input type="text" class="form-control" id="addjnsklmn" name="jk" readonly="">
-                    </div>
-                     <div class="form-group">
-                        <label for="addtgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="addtgllls" name="tgllls" readonly="">
-                    </div>
-                     <div class="form-group">
-                        <label for="addnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="addnoijs" name="nj">
-                    </div>
-                    <!-- Tambahkan input lain sesuai kebutuhan -->
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                <button type="button" class="btn btn-primary" id="saveAdd">Simpan</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-   <!-- Modal Edit -->
+    <!-- Modal Edit -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title" id="editModalLabel">Form Edit Lulus D3</h3>
+                <h3 class="modal-title" id="editModalLabel">Form Ganti Password</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -147,50 +94,10 @@
             <div class="modal-body">
                 <!-- Form Edit Data -->
                 <form id="editForm">
-                    <input type="hidden" id="editidmon" name="id_mon">
-                    <input type="hidden" id="editNim" name="nim">
+                    <input type="text" id="nim" name="nim">
                     <div class="form-group">
-                        <label for="editNama">Nama:</label>
-                        <input type="text" class="form-control" id="editNama" name="nama" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editTmptLahir">Tempat Lahir:</label>
-                        <input type="text" class="form-control" id="editTmptLahir" name="tl" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editTglLahir">Tanggal Lahir:</label>
-                        <input type="text" class="form-control" id="editTglLahir" name="tgll" readonly="">
-                    </div>
-                    <div class="form-group">
-                        <label for="editAlamat">Alamat:</label>
-                        <textarea class="form-control" rows="3" id="editAlamat" name="alamat" readonly=""></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="editjnsklmn">Jenis Kelamin:</label>
-                        <input type="text" class="form-control" id="editjnsklmn" name="jk" readonly="">
-                    </div>
-                     <div class="form-group">
-                        <label for="edittgllls">Tanggal Lulus:</label>
-                        <input type="date" class="form-control" id="edittgllls" name="etgllls">
-                    </div>
-                     <div class="form-group">
-                        <label for="editnoijs">Nomor Ijasah:</label>
-                        <input type="text" class="form-control" id="editnoijs" name="enj" readonly="">
-                    </div>
-                     <div class="form-group">
-                        <label for="editstatpra">Status Lulus D3:</label>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatd3" name="estatd3" value="sudah">
-                            <label class="form-check-label" for="editstatd3">Sudah</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="radio" class="form-check-input" id="editstatd3" name="estatd3" value="belum">
-                            <label class="form-check-label" for="editstatd3">Belum</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="editKetD3">Keterangan:</label>
-                        <textarea class="form-control" rows="3" id="editKetD3" name="ket_d3"></textarea>
+                        <label for="editNama">Masukkan Password:</label>
+                        <input type="text" class="form-control" id="password" name="password">
                     </div>
                     <!-- Tambahkan input lain sesuai kebutuhan -->
                 </form>
