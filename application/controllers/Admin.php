@@ -67,73 +67,62 @@ class Admin extends CI_Controller {
     public function akun()
     {
       # code...
-        $prodi      = $this->input->post('prodi');
+        $prodi        = $this->input->post('prodi');
         $tahun_lulus  = $this->input->post('tahun_lulus');
-        $nim         = $this->input->post('nim');
+        $nim          = $this->input->post('nim');
         
         if($nim > 0) {
             $where = array(
-            'tbl_catar_2025.no' => $no,
+            'tmst_mahasiswa.nim' => $nim,
             // 'prodi'     => $prodi,                 
              );
-            $data['catar'] = $this->m_registrasi->get_data_sudah_daful($where)->result();
+            $data['lulusan'] = $this->m_tracer->get_data_join_where2021($where)->result();
             // $data['label'] = "by Nomor Pendaftaran";
-            $this->load->view('bau/header');
-            $this->load->view('bau/lihatdatadaful');
-            $this->load->view('bau/lihatdatadafulp',$data);
-            $this->load->view('bau/footer');
-            $this->load->view('bau/footer_js');
-            $this->load->view('bau/lihatdatadafulp_js');
+            $this->load->view('admin/header');
+            $this->load->view('admin/akuna');
+            $this->load->view('admin/akun',$data);
+            $this->load->view('admin/footer');
+            $this->load->view('admin/akun_js');
 
         }elseif ($prodi == 0) {
              # code...
             $where = array(
-            'tbl_catar_2025.gelombang' => $gelombang,
+            'tbl_datadiri2021.tahun_lulus' => $tahun_lulus,
             // 'prodi'     => $prodi,                 
              );
-            $data['catar'] = $this->m_registrasi->get_data_sudah_daful($where)->result();
-            $data['label'] = "by Gelombang";
-            $this->load->view('bau/header');
-            $this->load->view('bau/lihatdatadaful');
-            $this->load->view('bau/lihatdatadafulp',$data);
-            $this->load->view('bau/footer');
-            $this->load->view('bau/footer_js');
-            $this->load->view('bau/lihatdatadafulp_js');
-         }elseif ($gelombang == null) {
+            $data['lulusan'] = $this->m_tracer->get_data_join_where2021($where)->result();
+            // $data['label'] = "by Nomor Pendaftaran";
+            $this->load->view('admin/header');
+            $this->load->view('admin/akuna');
+            $this->load->view('admin/akun',$data);
+            $this->load->view('admin/footer');
+            $this->load->view('admin/akun_js');
+         }elseif ($tahun_lulus == null) {
              # code...
              $where = array(
             // 'gelombang' => $gelombang,
-            'tbl_catar_2025.prodi'     => $prodi,                 
+            'tbl_datadiri2021.prodi'     => $prodi,                 
              );
-            $data['catar'] = $this->m_registrasi->get_data_sudah_daful($where)->result();
-            $data['label'] = "by Prodi";
-            $this->load->view('bau/header');
-            $this->load->view('bau/lihatdatadaful');
-            $this->load->view('bau/lihatdatadafulp',$data);
-            $this->load->view('bau/footer');
-            $this->load->view('bau/footer_js');
-            $this->load->view('bau/lihatdatadafulp_js');
+           $data['lulusan'] = $this->m_tracer->get_data_join_where2021($where)->result();
+            // $data['label'] = "by Nomor Pendaftaran";
+            $this->load->view('admin/header');
+            $this->load->view('admin/akuna');
+            $this->load->view('admin/akun',$data);
+            $this->load->view('admin/footer');
+            $this->load->view('admin/akun_js');
          }else{
             $where = array(
-            'tbl_catar_2025.gelombang' => $gelombang,
-            'tbl_catar_2025.prodi'     => $prodi,                 
+            'tbl_datadiri2021.tahun_lulus' => $tahun_lulus,
+            'tbl_datadiri2021.prodi'     => $prodi,                 
             );
-            $data['catar'] = $this->m_registrasi->get_data_sudah_daful($where)->result();
-            $data['label'] = "by Prodi & Gelombang";
-            $this->load->view('bau/header');
-            $this->load->view('bau/lihatdatadaful');
-            $this->load->view('bau/lihatdatadafulp',$data);
-            $this->load->view('bau/footer');
-            $this->load->view('bau/footer_js');
-            $this->load->view('bau/lihatdatadafulp_js');
+           $data['lulusan'] = $this->m_tracer->get_data_join_where2021($where)->result();
+            // $data['label'] = "by Nomor Pendaftaran";
+            $this->load->view('admin/header');
+            $this->load->view('admin/akuna');
+            $this->load->view('admin/akun',$data);
+            $this->load->view('admin/footer');
+            $this->load->view('admin/akun_js');
          } 
-
-
-
-    $data['lulusan'] = $this->m_tracer->get_data_join_where2021()->result();  
-    $this->load->view('admin/header');
-    $this->load->view('admin/akun',$data);
-    $this->load->view('admin/footer');
     }
 
    ///////////////////////////////////////////////////// .Akun //////////////////////////////////////////////////////
