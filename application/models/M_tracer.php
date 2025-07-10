@@ -19,6 +19,11 @@ class M_tracer extends CI_Model {
 		$this->db->where($where);
 		$this->db->delete($table);
 	}
+	public function delete_data25($where, $table)
+	{
+	    $this->db->where($where);
+	    return $this->db->delete($table);
+	}
 	function get_data($where,$table){		
 	return $this->db->get_where($table,$where);
 	}

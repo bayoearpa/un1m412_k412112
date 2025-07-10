@@ -151,6 +151,19 @@ class Admin extends CI_Controller {
           echo 'gagal';
       }
     }
+    public function akun_delete()
+    {
+        $nim = $this->input->post('nim');
+
+        $where = array('nimhsmsmh' => $nim);
+        $res = $this->m_tracer->delete_data25($where, 'tbl_datadiri2021');
+
+        if ($res) {
+            echo 'sukses';
+        } else {
+            echo 'gagal';
+        }
+    }
 
    ///////////////////////////////////////////////////// .Akun //////////////////////////////////////////////////////
 	public function export()

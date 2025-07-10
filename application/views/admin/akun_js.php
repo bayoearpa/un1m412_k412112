@@ -154,5 +154,31 @@ function connectEditButtonListeners() {
     });
 
 
+    $('#example31082023').on('click', '.del-button', function() {
+        var id = $(this).data('id');
+
+        if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+            $.ajax({
+                url: '<?php echo base_url('admin/akun_delete'); ?>', // Sesuaikan dengan route di controller
+                type: 'POST',
+                data: { nim: id },
+                success: function(response) {
+                    if (response.trim() === 'sukses') {
+                        alert('Data berhasil dihapus.');
+                        // Jika pakai DataTables AJAX:
+                        // $('#example31082023').DataTable().ajax.reload(null, false);
+                        location.reload(); // atau reload biasa
+                    } else {
+                        alert('Gagal menghapus data.');
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert('Terjadi kesalahan: ' + error);
+                }
+            });
+        }
+    });
+
+
     });
     </script>
