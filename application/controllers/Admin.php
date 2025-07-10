@@ -135,7 +135,7 @@ class Admin extends CI_Controller {
     {
       // Tangani data yang dikirimkan dari formulir
       $where = array(
-          'nim' => $this->input->post('nim'),
+          'nimhsmsmh' => $this->input->post('nim'),
       ); 
       $data = array(
           'password' => $this->input->post('password')
