@@ -138,7 +138,7 @@ class Admin extends CI_Controller {
           'nimhsmsmh' => $this->input->post('nim'),
       ); 
       $data = array(
-          'password' => $this->input->post('password')
+          'password' => md5($this->input->post('password'))
       );
 
       // Simpan data ke database
