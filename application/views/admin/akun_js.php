@@ -34,14 +34,22 @@
     $.ajax({
       url: '<?php echo base_url('admin/akun_get_data/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
       type: 'GET',
-      success: function(data) {
-        // Isi modal dengan data yang diambil
-        console.log(data); // Cetak nilai data ke konsol
-        var parsedData = JSON.parse(data);
-        $('#enim').val(parsedData.nim);
-        // Tambahkan input lain sesuai kebutuhan
-        $('#editModal').modal('show');
-      }
+     success: function(data) {
+          console.log('Raw data from server:', data);
+
+          try {
+            var parsedData = JSON.parse(data);
+            if (!parsedData || !parsedData.nim) {
+              alert('Data tidak ditemukan atau kosong');
+              return;
+            }
+
+            $('#enim').val(parsedData.nim);
+            $('#editModal').modal('show');
+          } catch (e) {
+            console.error('JSON parse error:', e);
+          }
+        }
     });
   });
 // Fungsi untuk memuat ulang tabel
