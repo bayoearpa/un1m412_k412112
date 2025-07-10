@@ -101,7 +101,7 @@ class Admin extends CI_Controller {
              # code...
              $where = array(
             // 'gelombang' => $gelombang,
-            'tmst_mahasiswa.prodi'     => $prodi,                 
+            'tmst_mahasiswa.Kode_program_studi'     => $prodi,                 
              );
            $data['lulusan'] = $this->m_tracer->get_data_join_where2021($where)->result();
             // $data['label'] = "by Nomor Pendaftaran";
