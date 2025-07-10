@@ -26,35 +26,7 @@
                 // Other DataTables options...
             });
 
- // Menampilkan modal saat tombol "Tambah" diklik
-  $('#example31082023').on('click', '.add-button', function() {
-    var id = $(this).data('id');
-    // Ambil data yang akan diedit dari server dengan AJAX
-    $.ajax({
-      url: '<?php echo base_url('ppk/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
-      type: 'GET',
-      success: function(data) {
-        // Isi modal dengan data yang diambil
-        console.log(data); // Cetak nilai data ke konsol
-        var parsedData = JSON.parse(data);
-        $('#addNim').val(parsedData.nim);
-        $('#addNama').val(parsedData.nama);
-        $('#addTmptLahir').val(parsedData.tl);
-        $('#addTglLahir').val(parsedData.tgll);
-        $('#addAlamat').val(parsedData.alamat);
-            // Set jenis kelamin sesuai dengan data dari database
-            if (parsedData.jk === 'L') {
-                $('#addjnsklmn').val('Laki-laki');
-            } else if (parsedData.jk === 'P') {
-                $('#addjnsklmn').val('Perempuan');
-            }
-        $('#addtgllls').val(parsedData.d3_tanggal_lulus);
-        $('#addnoijs').val(parsedData.d3_no_ijasah);
-        // Tambahkan input lain sesuai kebutuhan
-        $('#addModal').modal('show');
-      }
-    });
-  });
+
 // Menampilkan modal saat tombol "Edit" diklik
   $('#example31082023').on('click', '.edit-button', function() {
     var id = $(this).data('id');
@@ -66,7 +38,7 @@
         // Isi modal dengan data yang diambil
         console.log(data); // Cetak nilai data ke konsol
         var parsedData = JSON.parse(data);
-        $('#nim').val(parsedData.nim);
+        $('#enim').val(parsedData.nim);
         // Tambahkan input lain sesuai kebutuhan
         $('#editModal').modal('show');
       }
@@ -125,37 +97,7 @@ function connectEditButtonListeners() {
   });
 }
 
-function connectInsertButtonListeners() { 
-    // Menampilkan modal saat tombol "Tambah" diklik
-  $('.add-button').click(function() {
-    var id = $(this).data('id');
-    // Ambil data yang akan diedit dari server dengan AJAX
-    $.ajax({
-      url: '<?php echo base_url('ppk/mon_add/'); ?>' + id, // Sesuaikan dengan URL yang sesuai
-      type: 'GET',
-      success: function(data) {
-        // Isi modal dengan data yang diambil
-        console.log(data); // Cetak nilai data ke konsol
-        var parsedData = JSON.parse(data);
-        $('#addNim').val(parsedData.nim);
-        $('#addNama').val(parsedData.nama);
-        $('#addTmptLahir').val(parsedData.tl);
-        $('#addTglLahir').val(parsedData.tgll);
-        $('#addAlamat').val(parsedData.alamat);
-            // Set jenis kelamin sesuai dengan data dari database
-            if (parsedData.jk === 'L') {
-                $('#addjnsklmn').val('Laki-laki');
-            } else if (parsedData.jk === 'P') {
-                $('#addjnsklmn').val('Perempuan');
-            }
-        $('#addtgllls').val(parsedData.d3_tanggal_lulus);
-        $('#addnoijs').val(parsedData.d3_no_ijasah);
-        // Tambahkan input lain sesuai kebutuhan
-        $('#addModal').modal('show');
-      }
-    });
-  });
-}
+
 
     // Menyimpan perubahan dengan AJAX
     $('#saveAdd').click(function() {

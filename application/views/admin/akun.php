@@ -94,7 +94,7 @@
             <div class="modal-body">
                 <!-- Form Edit Data -->
                 <form id="editForm">
-                    <input type="text" id="nim" name="nim">
+                    <input type="text" id="enim" name="nim">
                     <div class="form-group">
                         <label for="editNama">Masukkan Password:</label>
                         <input type="text" class="form-control" id="password" name="password">
