@@ -142,7 +142,7 @@ class Admin extends CI_Controller {
       );
 
       // Simpan data ke database
-      $res = $this->m_tracer->update_data($where, $data,'tbl_datadiri2021');
+      $res = $this->m_tracer->update_data25($where, $data,'tbl_datadiri2021');
       // Sesuaikan dengan model dan metode penyimpanan data Anda
 
       if ($res) {

@@ -10,6 +10,11 @@ class M_tracer extends CI_Model {
 		$this->db->where($where);
 		$this->db->update($table,$data);
 	}
+	function update_data25($where,$data,$table){
+		$this->db->where($where);
+		$this->db->update($table,$data);
+		return $this->db->update($table,$data);
+	}
 	function delete_data($where,$table){
 		$this->db->where($where);
 		$this->db->delete($table);
@@ -494,7 +499,7 @@ tbl_datadiri2021.bekerja');
 				$this->db->where($where);
 				// $this->db->order_by('tbl_catar_validasi.no_reg', "asc");
 				$query=$this->db->get();
-				
+
 				 if ($query->num_rows() > 0) {
 		            return $query->row();
 		        } else {
