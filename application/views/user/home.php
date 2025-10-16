@@ -21,12 +21,12 @@
               <div class="col-xs-6">
               <strong><i class="fa fa-user margin-r-5"></i> Nama Lengkap</strong>
               <p class="text-muted">
-                <?php echo $c->Nama_mahasiswa ?>
+                <?php echo $c->nama ?>
               </p>
               
               <strong><i class="fa fa-barcode margin-r-5"></i> NIM / NRP</strong>
               <p class="text-muted">
-                <?php echo $c->nimhsmsmh ?>
+                <?php echo $c->nim ?>
               </p>
               
               <strong><i class="fa fa-book margin-r-5"></i> Prodi</strong>
@@ -107,7 +107,7 @@
               <strong><i class="fa fa-book margin-r-5"></i> No. Handphone</strong>
 
               <p class="text-muted">
-                <?php echo $c->telpomsmh; ?>
+                <?php echo $c->telp; ?>
               </p>
 
              

@@ -16,7 +16,7 @@
 
   <table class='table table-striped table-responsive'>
     <tr>
-      <td class='i'>Identitas<br /><span class='h'>f1</span></td><td> Nomor Mahasiswa</td><td>:</td><td><input type='text' name='nimhsmsmh' value='<?php echo $c->nimhsmsmh ?>' size='20'></td>
+      <td class='i'>Identitas<br /><span class='h'>f1</span></td><td> Nomor Mahasiswa</td><td>:</td><td><input type='text' name='nimhsmsmh' value='<?php echo $c->nim ?>' size='20'></td>
     </tr>
     <tr>
       <td class='h'><span class='h'></span></td><td>Kode PT</td><td>:</td><td><input type='text' value='061056' name='kdptimsmh' size='20' readonly></td>
@@ -27,13 +27,13 @@
     <tr><td class='h'><span class='h'></span></td><td>Kode Prodi</td><td>:</td><td><input type='text' value='<?php echo $c->Kode_program_studi ?>' name='kdpstmsmh' size='20'></td>
     </tr>
     <tr>
-      <td class='h'><span class='h'></span></td><td>Nama</td><td>:</td><td><input type='text' value='<?php echo $c->Nama_mahasiswa ?>' name='nmmhsmsmh' size='20'></td>
+      <td class='h'><span class='h'></span></td><td>Nama</td><td>:</td><td><input type='text' value='<?php echo $c->Nama_mahasiswa ?>' name='nama' size='20'></td>
     </tr>
     <tr>
-      <td class='h'><span class='h'></span></td><td>Nomor Telepon/HP</td><td>:</td><td><input type='text' value='<?php echo $c->telpomsmh ?>' name='telpomsmh' size='20'></td>
+      <td class='h'><span class='h'></span></td><td>Nomor Telepon/HP</td><td>:</td><td><input type='text' value='<?php echo $c->telpomsmh ?>' name='telp' size='20'></td>
     </tr>
     <tr>
-      <td class='h'><span class='h'></span></td><td>Alamat Email</td><td>:</td><td><input type='text' value='<?php echo $c->emailmsmh ?>' name='emailmsmh' size='40'></td>
+      <td class='h'><span class='h'></span></td><td>Alamat Email</td><td>:</td><td><input type='text' value='<?php echo $c->emailmsmh ?>' name='email' size='40'></td>
     </tr>
     <tr>
       <td class='h'><span class='h'></span></td><td>NIK</td><td>:</td><td><input type='text' value='<?php echo $c->nik ?>' name='nik' size='40'></td>
