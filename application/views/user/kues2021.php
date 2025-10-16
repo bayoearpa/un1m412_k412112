@@ -22,18 +22,18 @@
       <td class='h'><span class='h'></span></td><td>Kode PT</td><td>:</td><td><input type='text' value='061056' name='kdptimsmh' size='20' readonly></td>
     </tr>
     <tr>
-      <td class='h'><span class='h'></span></td><td>Tahun Lulus</td><td>:</td><td><input type='text' value='<?php echo $c->tahun_lulus ?>' name='tahun_lulus' size='20'></td>
+      <td class='h'><span class='h'></span></td><td>Tahun Lulus</td><td>:</td><td><input type='text' value='<?php echo $c->thn_lulus ?>' name='tahun_lulus' size='20'></td>
     </tr>
     <tr><td class='h'><span class='h'></span></td><td>Kode Prodi</td><td>:</td><td><input type='text' value='<?php echo $c->Kode_program_studi ?>' name='kdpstmsmh' size='20'></td>
     </tr>
     <tr>
-      <td class='h'><span class='h'></span></td><td>Nama</td><td>:</td><td><input type='text' value='<?php echo $c->Nama_mahasiswa ?>' name='nama' size='20'></td>
+      <td class='h'><span class='h'></span></td><td>Nama</td><td>:</td><td><input type='text' value='<?php echo $c->nama ?>' name='nmmhsmsmh' size='20'></td>
     </tr>
     <tr>
-      <td class='h'><span class='h'></span></td><td>Nomor Telepon/HP</td><td>:</td><td><input type='text' value='<?php echo $c->telpomsmh ?>' name='telp' size='20'></td>
+      <td class='h'><span class='h'></span></td><td>Nomor Telepon/HP</td><td>:</td><td><input type='text' value='<?php echo $c->telp ?>' name='telpomsmh' size='20'></td>
     </tr>
     <tr>
-      <td class='h'><span class='h'></span></td><td>Alamat Email</td><td>:</td><td><input type='text' value='<?php echo $c->emailmsmh ?>' name='email' size='40'></td>
+      <td class='h'><span class='h'></span></td><td>Alamat Email</td><td>:</td><td><input type='text' value='<?php echo $c->email ?>' name='emailmsmh' size='40'></td>
     </tr>
     <tr>
       <td class='h'><span class='h'></span></td><td>NIK</td><td>:</td><td><input type='text' value='<?php echo $c->nik ?>' name='nik' size='40'></td>
