@@ -30,7 +30,7 @@ class Welcome extends CI_Controller {
 	{
         $data['last'] = $this->m_tracer->get_data_last('tbl_jobinfo','1')->result();
 		$this->load->view('header');
-		$this->load->view('home',$data);
+		$this->load->view('home_modern',$data);
 		$this->load->view('footer');
 	}
 	public function tentang()
